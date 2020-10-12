@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Page</title>
+</head>
+<body>
+  <h1>Beer Blog Recipe Scaler!</h1>
+  <script src="../dist/index.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var testRecipe = {
+        name: 'Test Recipe'
+      }
+      BeerBlogRecipeScaler.scale(testRecipe)
+    })
+  </script>
+</body>
+</html>
