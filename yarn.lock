@@ -2009,6 +2009,7 @@ __metadata:
     "@babel/preset-env": ^7.11.5
     babel-loader: ^8.1.0
     http-server: ^0.12.3
+    immer: ^7.0.9
     prettier: ^2.1.2
     webpack: ^5.0.0
     webpack-cli: ^4.0.0
@@ -3705,6 +3706,13 @@ __metadata:
   version: 4.0.6
   resolution: "ignore@npm:4.0.6"
   checksum: 8f7b7f7c261d110604aed4340771933b0a42ffd2075e87bf8b4229ceb679659c5384c99e25c059f53a2b0e16cebaa4c49f7e837d1f374d1abf91fea46ccddd1a
+  languageName: node
+  linkType: hard
+
+"immer@npm:^7.0.9":
+  version: 7.0.9
+  resolution: "immer@npm:7.0.9"
+  checksum: 20fba3dabd033f9584eb1df9c16210b64c16a536a6376b0dedf153176554d89432ee86409458d8773edd142ddcae75f8e242b1952cd5b61c22767a4538880dd0
   languageName: node
   linkType: hard
 

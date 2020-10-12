@@ -4,17 +4,147 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Test Page</title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+    </style>
   </head>
   <body>
     <h1>Beer Blog Recipe Scaler!</h1>
-    <script src="../dist/index.js"></script>
-    <script>
+    <h2>Markdown</h2>
+    <pre id="markdown">TODO</pre>
+    <h2>Scaled JSON</h2>
+    <pre id="scaled-json"></pre>
+    <h2>Original JSON</h2>
+    <pre id="original-json"></pre>
+    <script type="text/javascript" src="../dist/index.js"></script>
+    <script type="text/javascript">
       document.addEventListener('DOMContentLoaded', function () {
-        var testRecipe = {
-          name: 'Test Recipe',
-        }
-        BeerBlogRecipeScaler.scale(testRecipe)
+        var recipe = document.querySelector('#recipe').textContent
+        console.log({ recipe: JSON.parse(recipe) })
+        document.querySelector('#original-json').innerHTML = recipe
+        var scaledRecipe = BeerBlogRecipeScaler.scale({
+          recipe,
+          newSize: 2,
+        })
+        console.log({ scaledRecipe })
+        document.querySelector('#scaled-json').innerHTML = JSON.stringify(
+          scaledRecipe,
+          null,
+          2
+        )
       })
+    </script>
+    <script id="recipe" type="text/template">
+      {
+        "name": "My Recipe",
+        "type": "PARTIAL_MASH",
+        "size": {
+          "value": 5,
+          "unit": "GALLON"
+        },
+        "style": {
+          "name": "Witbier",
+          "bjcp_2015": "24A"
+        },
+        "gravity": {
+          "original": "1.050",
+          "final": "1.015"
+        },
+        "ibu": 12,
+        "color": {
+          "value": 3.6,
+          "unit": "SRM"
+        },
+        "fermentables": [
+          {
+            "name": "Pilsen LME",
+            "amount": {
+              "value": 3.3,
+              "unit": "LB"
+            },
+            "color": {
+              "value": 3.5,
+              "unit": "SRM"
+            }
+          },
+          {
+            "name": "Wheat Malt",
+            "amount": {
+              "value": 4.5,
+              "unit": "LB"
+            },
+            "color": {
+              "value": 2,
+              "unit": "SRM"
+            }
+          }
+        ],
+        "hops": [
+          {
+            "name": "Hallertau",
+            "amount": {
+              "value": 0.75,
+              "unit": "OZ"
+            },
+            "alpha_acids": 4.5,
+            "time": {
+              "type": "BOIL",
+              "value": 60,
+              "unit": "MINUTE"
+            }
+          },
+          {
+            "name": "Cascade",
+            "amount": {
+              "value": 1,
+              "unit": "OZ"
+            },
+            "alpha_acids": 5.7,
+            "time": {
+              "type": "SECONDARY",
+              "value": 2,
+              "unit": "DAYS"
+            }
+          }
+        ],
+        "misc": [
+          {
+            "name": "Bitter Orange Peel",
+            "amount": {
+              "value": 0.25,
+              "unit": "OZ"
+            },
+            "time": {
+              "type": "BOIL",
+              "value": 5,
+              "unit": "MINUTE"
+            }
+          },
+          {
+            "name": "Ground Coriander",
+            "amount": {
+              "value": 0.1,
+              "unit": "OZ"
+            },
+            "time": {
+              "type": "BOIL",
+              "value": 5,
+              "unit": "MINUTE"
+            }
+          }
+        ],
+        "yeast": [
+          {
+            "name": "White Labs WLP550 \"Belgian Ale\"",
+            "amount": {
+              "value": 2,
+              "unit": "PACKAGE"
+            }
+          }
+        ]
+      }
     </script>
   </body>
 </html>
