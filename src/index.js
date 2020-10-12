@@ -1,7 +1,19 @@
 import produce from 'immer'
 
+/**
+ * Round a number to two decimal places
+ * @param {Number} num 
+ * @returns {Number} the rounded number
+ */
 const roundDecimal = (num) => Math.round(num * 100) / 100
 
+/**
+ * Scale a beer recipe to the desired size
+ * @param {Object} options
+ * @property {String|Object} options.recipe the recipe to scale
+ * @property {Number|Object} options.newSize the target size of the recipe after scaling.
+ * @returns {Object} the scaled recipe object
+ */
 export const scale = ({ recipe, newSize }) => {
   // Convert recipe to an object
   let recipeObj
