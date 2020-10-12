@@ -1,0 +1,35 @@
+{
+  "name": "beer-blog-recipe-scaler",
+  "version": "1.0.0",
+  "description": "Utility for scaling beer recipes encoded in a simple JSON format",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "webpack",
+    "lint": "prettier --write .",
+    "test": "yarn lint && yarn build && hs -o test/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bencentra/beer-blog-recipe-scaler.git"
+  },
+  "author": "Ben Centra <blcentra@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bencentra/beer-blog-recipe-scaler/issues"
+  },
+  "homepage": "https://github.com/bencentra/beer-blog-recipe-scaler#readme",
+  "browserslist": "> 0.25%, not dead",
+  "volta": {
+    "node": "14.13.1",
+    "yarn": "1.22.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "babel-loader": "^8.1.0",
+    "http-server": "^0.12.3",
+    "prettier": "^2.1.2",
+    "webpack": "^5.0.0",
+    "webpack-cli": "^4.0.0"
+  }
+}
