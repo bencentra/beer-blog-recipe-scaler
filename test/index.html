@@ -13,7 +13,9 @@
   <body>
     <h1>Beer Blog Recipe Scaler!</h1>
     <h2>Markdown</h2>
-    <pre id="markdown">TODO</pre>
+    <pre id="markdown"></pre>
+    <h2>HTML</h2>
+    <div id="html"></div>
     <h2>Scaled JSON</h2>
     <pre id="scaled-json"></pre>
     <h2>Original JSON</h2>
@@ -34,6 +36,12 @@
           null,
           2
         )
+        const markdown = BeerBlogRecipeScaler.toMarkdown(scaledRecipe)
+        console.log({ markdown })
+        document.querySelector('#markdown').innerHTML = markdown
+        const html = BeerBlogRecipeScaler.toHTML(scaledRecipe)
+        console.log({ html })
+        document.querySelector('#html').innerHTML = html
       })
     </script>
     <script id="recipe" type="text/template">
@@ -49,8 +57,8 @@
           "bjcp_2015": "24A"
         },
         "gravity": {
-          "original": "1.050",
-          "final": "1.015"
+          "original": 1.050,
+          "final": 1.015
         },
         "ibu": 12,
         "color": {

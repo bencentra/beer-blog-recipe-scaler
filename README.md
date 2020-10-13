@@ -17,8 +17,8 @@ Utility for scaling beer recipes encoded in a simple JSON format
     "bjcp_2015": "24A"
   },
   "gravity": {
-    "original": "1.050",
-    "final": "1.015"
+    "original": 1.05,
+    "final": 1.015
   },
   "ibu": 12,
   "color": {
