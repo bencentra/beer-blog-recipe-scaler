@@ -17,8 +17,8 @@ Utility for scaling beer recipes encoded in a simple JSON format
     "bjcp_2015": "24A"
   },
   "gravity": {
-    "original": "1.050",
-    "final": "1.015"
+    "original": 1.05,
+    "final": 1.015
   },
   "ibu": 12,
   "color": {
@@ -56,7 +56,10 @@ Utility for scaling beer recipes encoded in a simple JSON format
         "value": 0.75,
         "unit": "OZ"
       },
-      "alpha_acids": 4.5,
+      "alpha_acids": {
+        "value": 4.5,
+        "unit": "PERCENT"
+      },
       "time": {
         "type": "BOIL",
         "value": 60,
@@ -69,7 +72,10 @@ Utility for scaling beer recipes encoded in a simple JSON format
         "value": 1,
         "unit": "OZ"
       },
-      "alpha_acids": 5.7,
+      "alpha_acids": {
+        "value": 5.7,
+        "unit": "PERCENT"
+      },
       "time": {
         "type": "SECONDARY",
         "value": 2,
