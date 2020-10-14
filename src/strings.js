@@ -20,6 +20,7 @@ export const STRINGS = {
     // Color
     SRM: (amount) => `${amount} SRM`,
     // Other
+    PERCENT: (amount) => `${amount}%`,
     PACKAGE: (amount) => pluralize('Package', amount),
   },
 }

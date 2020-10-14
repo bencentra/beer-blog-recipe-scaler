@@ -20,7 +20,13 @@ export const pluralize = (unit, amount) =>
  * @returs {String} the capitalized string
  */
 export const capitalize = (str) => {
-  const chars = str.split('')
-  chars[0] = chars[0].toUpperCase()
-  return chars.join('')
+  const parts = str.split('_')
+  const capitalized = parts.map((substr) => {
+    const chars = substr.split('')
+    chars[0] = chars[0].toUpperCase()
+    return chars.join('')
+  })
+  const newStr = capitalized.join(' ')
+  newStr.trim()
+  return newStr
 }

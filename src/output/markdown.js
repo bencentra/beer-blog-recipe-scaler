@@ -20,7 +20,9 @@ export const toMarkdown = (recipe) => {
   lines.push(`| __Original Gravity__ | ${recipe.gravity.original.toFixed(3)} |`)
   lines.push(`| __Final Gravity__ | ${recipe.gravity.final.toFixed(3)} |`)
   lines.push(
-    `| __ABV__ | ${abv(recipe.gravity.original, recipe.gravity.final)}% |`
+    `| __ABV__ | ${STRINGS.units.PERCENT(
+      abv(recipe.gravity.original, recipe.gravity.final)
+    )} |`
   )
   lines.push(`| __IBU__ | ${recipe.ibu} |`)
   lines.push(
@@ -41,6 +43,7 @@ export const toMarkdown = (recipe) => {
     const rows = recipe[key]
     const rowsArr = rows.map((row) => {
       return cols.reduce((str, col) => {
+        console.log(str, col)
         let value = row[col]
         if (typeof value === 'object') {
           const type = value.type ? ` (${STRINGS.types[value.type]})` : ''
