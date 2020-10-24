@@ -12,6 +12,8 @@
   </head>
   <body>
     <h1>Beer Blog Recipe Scaler!</h1>
+    <h2>App</h2>
+    <div id="app"></div>
     <h2>Markdown</h2>
     <pre id="markdown"></pre>
     <h2>HTML</h2>
@@ -42,6 +44,9 @@
         const html = BeerBlogRecipeScaler.toHTML(scaledRecipe)
         console.log({ html })
         document.querySelector('#html').innerHTML = html
+        BeerBlogRecipeScaler.renderBeerScaler('#app', {
+          recipe,
+        })
       })
     </script>
     <script id="recipe" type="text/template">
