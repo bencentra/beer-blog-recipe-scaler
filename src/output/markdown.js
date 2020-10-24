@@ -43,7 +43,6 @@ export const toMarkdown = (recipe) => {
     const rows = recipe[key]
     const rowsArr = rows.map((row) => {
       return cols.reduce((str, col) => {
-        console.log(str, col)
         let value = row[col]
         if (typeof value === 'object') {
           const type = value.type ? ` (${STRINGS.types[value.type]})` : ''
